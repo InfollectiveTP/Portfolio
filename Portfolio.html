@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lim Teck Ping | Backend Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        bgMain: '#0f172a',
+                        bgCard: '#1e293b',
+                        accent: '#3b82f6',
+                        accentDim: '#1d4ed8'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+
+        /* Scroll reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Card hover animation */
+        .animate-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            border: 1px solid #334155;
+        }
+
+        .animate-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(59, 130, 246, 0.18);
+            border-color: #3b82f6;
+        }
+
+        /* Right side timeline / track nav */
+        .track-dot {
+            transition: all 0.3s ease;
+        }
+
+        .track-dot.active {
+            background-color: #3b82f6;
+            transform: scale(1.4);
+            box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.25);
+        }
+    </style>
+</head>
+
+<body class="font-sans">
+    <!-- Right Fixed Track Navigation -->
+    <aside class="fixed top-0 right-4 md:right-8 h-screen hidden lg:flex flex-col justify-center z-40">
+        <div class="relative">
+            <!-- Vertical line -->
+            <div class="absolute left-1/2 top-0 bottom-0 w-[2px] bg-slate-600 -translate-x-1/2"></div>
+            <nav class="relative flex flex-col gap-8">
+                <a href="#about" class="track-item group flex items-center justify-end gap-3">
+                    <span class="text-xs text-slate-400 group-hover:text-accent transition-colors">About Me</span>
+                    <div class="track-dot w-3 h-3 rounded-full bg-slate-500"></div>
+                </a>
+                <a href="#skills" class="track-item group flex items-center justify-end gap-3">
+                    <span class="text-xs text-slate-400 group-hover:text-accent transition-colors">Skills</span>
+                    <div class="track-dot w-3 h-3 rounded-full bg-slate-500"></div>
+                </a>
+                <a href="#experience" class="track-item group flex items-center justify-end gap-3">
+                    <span class="text-xs text-slate-400 group-hover:text-accent transition-colors">Experience</span>
+                    <div class="track-dot w-3 h-3 rounded-full bg-slate-500"></div>
+                </a>
+                <a href="#projects" class="track-item group flex items-center justify-end gap-3">
+                    <span class="text-xs text-slate-400 group-hover:text-accent transition-colors">Projects</span>
+                    <div class="track-dot w-3 h-3 rounded-full bg-slate-500"></div>
+                </a>
+                <a href="#ai-projects" class="track-item group flex items-center justify-end gap-3">
+                    <span class="text-xs text-slate-400 group-hover:text-accent transition-colors">AI Projects</span>
+                    <div class="track-dot w-3 h-3 rounded-full bg-slate-500"></div>
+                </a>
+                <a href="#education" class="track-item group flex items-center justify-end gap-3">
+                    <span class="text-xs text-slate-400 group-hover:text-accent transition-colors">Education</span>
+                    <div class="track-dot w-3 h-3 rounded-full bg-slate-500"></div>
+                </a>
+                <a href="#leadership" class="track-item group flex items-center justify-end gap-3">
+                    <span class="text-xs text-slate-400 group-hover:text-accent transition-colors">Leadership</span>
+                    <div class="track-dot w-3 h-3 rounded-full bg-slate-500"></div>
+                </a>
+            </nav>
+        </div>
+    </aside>
+
+    <header class="bg-bgCard py-16 px-6 border-b border-slate-700">
+        <div class="max-w-5xl mx-auto reveal">
+            <h1 class="text-3xl md:text-5xl font-bold mb-2 text-white">LIM TECK PING</h1>
+            <p class="text-xl md:text-2xl text-blue-300 mb-4">Backend Developer | Software Developer</p>
+            <div class="flex flex-wrap gap-4 mt-4 text-sm md:text-base text-slate-300">
+                <span><i class="fa-solid fa-location-dot mr-2 text-accent"></i>Kuching, Sarawak</span>
+                <span><i class="fa-solid fa-phone mr-2 text-accent"></i>016-707 9266</span>
+                <a href="mailto:teckpinglim45@gmail.com" class="hover:text-accent transition-colors">
+                    <i class="fa-solid fa-envelope mr-2 text-accent"></i>teckpinglim45@gmail.com
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-5 py-12 lg:pr-24">
+        <!-- About Me -->
+        <section id="about" class="mb-20 reveal">
+            <h2 class="text-2xl md:text-3xl font-bold text-white border-b-2 border-accent pb-2 mb-6 inline-block">About
+                Me</h2>
+            <div class="animate-card bg-bgCard rounded-xl p-5 md:p-6">
+                <p class="text-slate-300 leading-relaxed">
+                    Backend Developer with professional experience developing and maintaining ERP and business
+                    applications using PHP/Yii2 and MySQL.
+                    Experienced in backend automation, scheduled and background processing, database-driven reporting,
+                    business workflows, and service integrations.
+                    Hands-on with Yii2 CronJob, Yii2 Queue, RESTful APIs, Google Login, Google Drive, SVN and GitHub.
+                    Also involved in project coordination, intern supervision, and Swinburne FYP project coordination.
+                </p>
+            </div>
+        </section>
+
+        <!-- Technical Skills -->
+        <section id="skills" class="mb-20 reveal">
+            <h2 class="text-2xl md:text-3xl font-bold text-white border-b-2 border-accent pb-2 mb-6 inline-block">
+                Technical Skills</h2>
+            <div class="grid md:grid-cols-2 gap-5">
+                <div class="animate-card bg-bgCard rounded-xl p-5 md:p-6">
+                    <h3 class="font-semibold text-accent mb-2">Backend / Frameworks</h3>
+                    <p class="text-slate-300">Yii2, PHP, Laravel, Node.js</p>
+                </div>
+                <div class="animate-card bg-bgCard rounded-xl p-5 md:p-6">
+                    <h3 class="font-semibold text-accent mb-2">API & Integration</h3>
+                    <p class="text-slate-300">RESTful API, Google Credential, Google Drive integration</p>
+                </div>
+                <div class="animate-card bg-bgCard rounded-xl p-5 md:p-6">
+                    <h3 class="font-semibold text-accent mb-2">Database</h3>
+                    <p class="text-slate-300">MySQL, PostgreSQL, Microsoft SQL Server, phpMyAdmin, Firebase</p>
+                </div>
+                <div class="animate-card bg-bgCard rounded-xl p-5 md:p-6">
+                    <h3 class="font-semibold text-accent mb-2">Frontend / Programming</h3>
+                    <p class="text-slate-300">HTML, CSS, JavaScript, React.js (basic), C++, C#, Python, D3</p>
+                </div>
+                <div class="animate-card bg-bgCard rounded-xl p-5 md:p-6">
+                    <h3 class="font-semibold text-accent mb-2">Automation</h3>
+                    <p class="text-slate-300">Yii2 CronJob, Yii2 Queue, Google Login, Windows Batch Script (.bat)</p>
+                </div>
+                <div class="animate-card bg-bgCard rounded-xl p-5 md:p-6">
+                    <h3 class="font-semibold text-accent mb-2">Version Control</h3>
+                    <p class="text-slate-300">SVN, GitHub</p>
+                </div>
+                <div class="animate-card bg-bgCard rounded-xl p-5 md:p-6">
+                    <h3 class="font-semibold text-accent mb-2">Tools</h3>
+                    <p class="text-slate-300">Visual Studio Code, Visual Studio</p>
+                </div>
+                <div class="animate-card bg-bgCard rounded-xl p-5 md:p-6">
+                    <h3 class="font-semibold text-accent mb-2">AI-Assisted Development</h3>
+                    <p class="text-slate-300">Gemini, ChatGPT, Trae, Claude, Opencode, Grok — AI-assisted coding,
+                        debugging, code review & technical research</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience -->
+        <section id="experience" class="mb-20 reveal">
+            <h2 class="text-2xl md:text-3xl font-bold text-white border-b-2 border-accent pb-2 mb-6 inline-block">Work
+                Experience</h2>
+
+            <div class="animate-card bg-bgCard rounded-xl p-5 md:p-6 mb-6">
+                <div class="flex flex-wrap justify-between items-start mb-2">
+                    <h3 class="text-xl font-bold text-white">Backend Developer</h3>
+                    <span class="text-sm text-slate-400">Feb 2025 – Present</span>
+                </div>
+                <p class="text-accent font-medium mb-3">Infollective Solution Sdn. Bhd., Kuching, Sarawak</p>
+                <ul class="list-disc list-inside space-y-1.5 text-slate-300">
+                    <li>Develop and maintain backend functionality for internal business applications using PHP/Yii2
+                        with MySQL.</li>
+                    <li>Work on company ERP system: backend logic, reporting modules, dashboard data-analysis widgets
+                        for business data.</li>
+                    <li>Contribute to Task Management System supporting task-related workflows and backend processing.
+                    </li>
+                    <li>Build scheduled & background processes using Yii2 CronJob, Yii2 Queue, Windows .bat scripts for
+                        business automation.</li>
+                    <li>Build daily automated IRB Submission application for recurring submission workflows.</li>
+                    <li>Develop daily scheduled program to upload data to SQL Financial Accounting for automated
+                        accounting workflow.</li>
+                    <li>Integrate Google Login authentication and Google Drive file upload features.</li>
+                    <li>Manage source-code via SVN and GitHub for team collaboration.</li>
+                    <li>Hands-on project work with Node.js, React.js, Kotlin and Laravel.</li>
+                    <li>Assist project management: work allocation, coordination, task progress tracking.</li>
+                    <li>Supervise interns: assign tasks, monitor progress, provide technical guidance.</li>
+                    <li>Coordinate Swinburne University Final-Year-Project requirements, scope and progress.</li>
+                </ul>
+            </div>
+
+            <div class="animate-card bg-bgCard rounded-xl p-5 md:p-6">
+                <div class="flex flex-wrap justify-between items-start mb-2">
+                    <h3 class="text-xl font-bold text-white">Web Developer (Internship)</h3>
+                    <span class="text-sm text-slate-400">Jun 2024 – Aug 2024</span>
+                </div>
+                <p class="text-accent font-medium mb-3">Accountsoft Enterprise Sdn. Bhd., Kuching, Sarawak</p>
+                <ul class="list-disc list-inside space-y-1.5 text-slate-300">
+                    <li>Recreated existing management application by porting C++ implementation into Razor / HTML web
+                        application, preserving original business workflows.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Selected Projects -->
+        <section id="projects" class="mb-20 reveal">
+            <h2 class="text-2xl md:text-3xl font-bold text-white border-b-2 border-accent pb-2 mb-6 inline-block">
+                Selected Projects</h2>
+            <div class="grid gap-6">
+                <div class="animate-card bg-bgCard rounded-xl p-5 md:p-6">
+                    <h3 class="text-lg font-bold text-white">ERP System Project</h3>
+                    <p class="text-slate-300 mt-1">
+                        PHP/Yii2 + MySQL backend for enterprise ERP covering AP, AR, Sales, Purchase, Stock and Service
+                        modules.
+                        Implemented business logic, data processing, internal reporting and dashboard analytics widgets.
+                    </p>
+                </div>
+
+                <div class="animate-card bg-bgCard rounded-xl p-5 md:p-6">
+                    <h3 class="text-lg font-bold text-white">Task Management System</h3>
+                    <p class="text-slate-300 mt-1">
+                        Yii2 backend for employee task allocation, assignment, status tracking and consolidated
+                        reporting for management workload monitoring.
+                    </p>
+                </div>
+
+                <div class="animate-card bg-bgCard rounded-xl p-5 md:p-6">
+                    <h3 class="text-lg font-bold text-white">IRB Auto Submission Program</h3>
+                    <p class="text-slate-300 mt-1">
+                        Daily automated submission workflow built with Yii2 CronJob, Yii2 Queue and Windows batch
+                        scripts to eliminate repetitive manual operations.
+                    </p>
+                </div>
+
+                <div class="animate-card bg-bgCard rounded-xl p-5 md:p-6">
+                    <h3 class="text-lg font-bold text-white">SQL Financial Accounting Auto Import Program</h3>
+                    <p class="text-slate-300 mt-1">
+                        C# Windows Forms desktop app that parses CSV accounting data and automates import into SQL
+                        Financial Accounting to reduce manual entry.
+                    </p>
+                </div>
+
+                <div class="animate-card bg-bgCard rounded-xl p-5 md:p-6">
+                    <h3 class="text-lg font-bold text-white">TPBoard — Project Management Web App (Personal)</h3>
+                    <p class="text-slate-300 mt-1">
+                        Trello-inspired full-stack project & task management application with ~90% of Trello core
+                        functionality.
+                        <br>
+                        <a href="https://tpboard.thsite.top" target="_blank"
+                            class="text-accent underline mt-2 inline-block hover:text-blue-400 transition-colors">
+                            <i class="fa-solid fa-external-link mr-1"></i>Live Demo: tpboard.thsite.top
+                        </a>
+                    </p>
+                </div>
+
+                <div class="animate-card bg-bgCard rounded-xl p-5 md:p-6">
+                    <h3 class="text-lg font-bold text-white">SRDC Website — CMS & WordPress Custom Plugin</h3>
+                    <p class="text-slate-300 mt-1">
+                        Redesigned Sarawak Research Development Council website on WordPress, built custom plugins for
+                        custom forms and database tables.
+                        <br>
+                        <a href="https://srdc.infinityfreeapp.com" target="_blank"
+                            class="text-accent underline mt-2 inline-block hover:text-blue-400 transition-colors">
+                            <i class="fa-solid fa-external-link mr-1"></i>Live Demo: srdc.infinityfreeapp.com
+                        </a>
+                    </p>
+                </div>
+
+                <div class="animate-card bg-bgCard rounded-xl p-5 md:p-6">
+                    <h3 class="text-lg font-bold text-white">Sarawak Teacher’s Union Website</h3>
+                    <p class="text-slate-300 mt-1">
+                        Fully new custom CMS-based website for Sarawak Teachers' Union for easy content administration.
+                        <br>
+                        <a href="https://www.stu.org.my" target="_blank"
+                            class="text-accent underline mt-2 inline-block hover:text-blue-400 transition-colors">
+                            <i class="fa-solid fa-external-link mr-1"></i>Live Site: stu.org.my
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI / Machine Learning Projects -->
+        <section id="ai-projects" class="mb-20 reveal">
+            <h2 class="text-2xl md:text-3xl font-bold text-white border-b-2 border-accent pb-2 mb-6 inline-block">AI &
+                Machine Learning Projects</h2>
+            <div class="animate-card bg-bgCard rounded-xl p-5 md:p-6">
+                <ul class="list-disc list-inside space-y-2 text-slate-300">
+                    <li><strong>Agents & Maze Path-Finding:</strong> Implemented intelligent agents for maze solving.
+                    </li>
+                    <li><strong>Cat & Dog Species Classification:</strong> Transfer Learning + CNN for pet species
+                        identification for breeding-centre analysis.</li>
+                    <li><strong>Human Fall-Detection System:</strong> Supervised learning model to classify human
+                        posture: fall / sit / stand.</li>
+                    <li><strong>Bird Species Identification & Human Face Recognition:</strong> Applied machine-learning
+                        classification projects.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education" class="mb-20 reveal">
+            <h2 class="text-2xl md:text-3xl font-bold text-white border-b-2 border-accent pb-2 mb-6 inline-block">
+                Education</h2>
+            <div class="animate-card bg-bgCard rounded-xl p-5 md:p-6">
+                <div class="flex flex-wrap justify-between items-start">
+                    <h3 class="text-xl font-bold text-white">Bachelor of Computer Science</h3>
+                    <span class="text-sm text-slate-400">Graduated April 2025</span>
+                </div>
+                <p class="text-accent font-medium">Major: Artificial Intelligence and Software Development</p>
+                <p class="text-slate-300">Swinburne University of Technology Sarawak Campus | CGPA: 3.0</p>
+            </div>
+        </section>
+
+        <!-- Leadership & Additional Experience -->
+        <section id="leadership" class="mb-10 reveal">
+            <h2 class="text-2xl md:text-3xl font-bold text-white border-b-2 border-accent pb-2 mb-6 inline-block">
+                Leadership & Additional Experience</h2>
+            <div class="animate-card bg-bgCard rounded-xl p-5 md:p-6">
+                <ul class="list-disc list-inside space-y-1.5 text-slate-300">
+                    <li>Project Management Assistant: work allocation, project coordination & progress tracking</li>
+                    <li>Internship Supervisor: assign intern tasks, monitor progress and deliver technical guidance</li>
+                    <li>Swinburne FYP Project Coordinator: manage project requirements, scope, communication and
+                        progress</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            revealElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.88) {
+                    el.classList.add('active');
+                }
+            })
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // Right track nav highlight on scroll
+        const sections = ['about', 'skills', 'experience', 'projects', 'ai-projects', 'education', 'leadership'];
+        const dots = document.querySelectorAll('.track-dot');
+        const trackScrollHighlight = () => {
+            let current = '';
+            sections.forEach(secId => {
+                const sec = document.getElementById(secId);
+                if (!sec) return;
+                const rect = sec.getBoundingClientRect();
+                if (rect.top <= window.innerHeight * 0.45) {
+                    current = secId;
+                }
+            })
+            dots.forEach((dot, idx) => {
+                if (sections[idx] === current) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            })
+        };
+        window.addEventListener('scroll', trackScrollHighlight);
+        window.addEventListener('load', trackScrollHighlight);
+    </script>
+</body>
+
+</html>
